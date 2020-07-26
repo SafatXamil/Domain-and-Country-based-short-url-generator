@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Url Shortener</title>
+	
+	<!-- prevent the form from resubmitting. (doesn't work on safari)!-->
+	<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
+<style>
+textarea {
+  resize: none;
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">Url Shortener</h2>
+
+<form action="." method="POST" style="margin-top:10%;">{% csrf_token %}
+<p style="margin-left:12%;">Enter url to generate short code or </br>enter existing url to find short code</p>
+<div class="textarea_container" style="margin-left:12%;">
+<textarea placeholder="" name="input_url" id="input_url" rows="5" cols="50"></textarea>
+</div>
+<div class="textarea_container" style="margin-left:12%;">
+<div style='margin-top:30px;'>
+<input type="submit" value="Proceed"/>
+</div>
+</div>
+</div>
+</form>
+<p style='margin-left:12%;'>{{status}} {{url}}</p>
+</body>
+</html>
