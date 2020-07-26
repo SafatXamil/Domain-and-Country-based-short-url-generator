@@ -1,1 +1,0 @@
-{"https://airbnb.com/": "domain.com/ABNB-06sh3"}
